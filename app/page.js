@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import PricingCard from '@/components/PricingCard';
+import PricingCard from '@/components/pricingcard';
 import FeatureCard from '@/components/featurecard';
 import Hero from '@/components/Hero';
 import ComparisonTable from '@/components/ComparisionTable';
