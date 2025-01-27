@@ -4,18 +4,7 @@ import React from 'react';
 
 const ComparisonTable = () => {
   const features = [
-    {
-      name: "Contas a Receber",
-      starter: true,
-      plus: true,
-      pro: true
-    },
-    {
-      name: "Contas a Pagar",
-      starter: true,
-      plus: true,
-      pro: true
-    },
+    
     {
       name: "Gestão de Agendas",
       starter: true,
@@ -46,18 +35,8 @@ const ComparisonTable = () => {
       plus: true,
       pro: true
     },
-    {
-      name: "Histórico de Procedimentos",
-      starter: false,
-      plus: true,
-      pro: true
-    },
-    {
-      name: "Gestão de Retornos",
-      starter: false,
-      plus: true,
-      pro: true
-    },
+  
+    
     {
       name: "Gestão de Performance",
       starter: false,

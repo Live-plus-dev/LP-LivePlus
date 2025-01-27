@@ -8,6 +8,7 @@ import Hero from '@/components/Hero';
 import ComparisonTable from '@/components/ComparisionTable';
 import Footer from '@/components/footer';
 import FAQAccordion from '@/components/Faq';
+import DashboardMedico from '@/components/MedicalSelector';
 
 const LifePlusLanding = () => {
   const features = [
@@ -50,7 +51,9 @@ const LifePlusLanding = () => {
           </div>
         </div>
       </section>
-
+      <section className="px-4 py-16 bg-white">
+      <DashboardMedico/>
+      </section>
       <ComparisonTable />
 
       <section className="px-4 py-16 bg-white">
@@ -117,7 +120,7 @@ const LifePlusLanding = () => {
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-8">Ainda tem dúvidas?</h2>
           <p className="text-xl text-gray-600 mb-8">
-            Agende uma demonstração gratuita com nossa equipe e descubra como o Life Plus pode transformar sua clínica
+            Agende uma demonstração gratuita com nossa equipe e descubra como o Live Plus pode transformar sua clínica
           </p>
           <button className="bg-[#009ee3] text-white py-3 px-8 rounded-lg text-lg hover:bg-[#008cc7] transition-colors duration-300">
             Agendar Demonstração

@@ -7,16 +7,16 @@ const FAQAccordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const faqData = [
     {
-      question: "Como o Life Plus pode ajudar na gestão da minha clínica?",
-      answer: "O Life Plus oferece um conjunto completo de ferramentas para gestão de clínicas, incluindo agendamento de consultas, gestão financeira, prontuário eletrônico e telemedicina. Nossa plataforma ajuda a otimizar processos, reduzir custos operacionais e melhorar a experiência dos pacientes."
+      question: "Como o Live Plus pode ajudar na gestão da minha clínica?",
+      answer: "O Live Plus oferece um conjunto completo de ferramentas para gestão de clínicas, incluindo agendamento de consultas, gestão financeira, prontuário eletrônico e telemedicina. Nossa plataforma ajuda a otimizar processos, reduzir custos operacionais e melhorar a experiência dos pacientes."
     },
     {
       question: "Quanto tempo leva para implementar o sistema?",
-      answer: "A implementação básica do Life Plus pode ser feita em apenas 24 horas. Oferecemos treinamento completo para sua equipe e suporte durante todo o processo de transição. A migração de dados existentes, quando necessária, é realizada de forma segura e eficiente."
+      answer: "A implementação básica do Live Plus pode ser feita em apenas 24 horas. Oferecemos treinamento completo para sua equipe e suporte durante todo o processo de transição. A migração de dados existentes, quando necessária, é realizada de forma segura e eficiente."
     },
     {
       question: "O sistema é seguro e atende às regulamentações de saúde?",
-      answer: "Sim, o Life Plus segue todas as normas da LGPD e as regulamentações específicas do setor de saúde. Utilizamos criptografia de ponta a ponta, backup automático e servidores seguros para proteger os dados dos pacientes e da clínica."
+      answer: "Sim, o Live Plus segue todas as normas da LGPD e as regulamentações específicas do setor de saúde. Utilizamos criptografia de ponta a ponta, backup automático e servidores seguros para proteger os dados dos pacientes e da clínica."
     },
     {
       question: "Como funciona a integração com convênios médicos?",
@@ -24,7 +24,7 @@ const FAQAccordion = () => {
     },
     {
       question: "Posso acessar o sistema de qualquer lugar?",
-      answer: "Sim, o Life Plus é uma solução 100% na nuvem, permitindo acesso seguro de qualquer dispositivo com conexão à internet. Você pode gerenciar sua clínica, acessar prontuários e realizar atendimentos mesmo quando estiver fora do consultório."
+      answer: "Sim, o Live Plus é uma solução 100% na nuvem, permitindo acesso seguro de qualquer dispositivo com conexão à internet. Você pode gerenciar sua clínica, acessar prontuários e realizar atendimentos mesmo quando estiver fora do consultório."
     }
   ];
 
