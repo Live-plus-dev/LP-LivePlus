@@ -9,6 +9,7 @@ import ComparisonTable from '@/components/ComparisionTable';
 import Footer from '@/components/footer';
 import FAQAccordion from '@/components/Faq';
 import DashboardMedico from '@/components/MedicalSelector';
+import CrispChat from '@/components/CrispChat';
 
 const LifePlusLanding = () => {
   const features = [
@@ -34,7 +35,11 @@ const LifePlusLanding = () => {
 
   return (
     <div className="font-['Segoe UI'] text-gray-800">
-      
+
+      <CrispChat></CrispChat>
+
+
+
       <Hero/>
 
       <section className="px-4 py-16 bg-white">
@@ -56,6 +61,7 @@ const LifePlusLanding = () => {
       </section>
       <ComparisonTable />
 
+      
       <section className="px-4 py-16 bg-white">
   <div className="container mx-auto">
     <div className="grid md:grid-cols-3 gap-8">
@@ -69,7 +75,7 @@ const LifePlusLanding = () => {
           "Contas a Pagar",
           "Gestão de Agendas",
           "Gestão de Procedimentos",
-          "Fluxo de Caixa",
+          "Gestão financeira",
           "Telemedicina"
         ]}
         buttonText="Selecionar plano"
@@ -100,9 +106,8 @@ const LifePlusLanding = () => {
           "Tudo do Plus, mais:",
           "Gestão de Requisições de Funcionalidades",
           "Integração com WhatsApp",
-          "",
-          "",
-          "",
+          
+         
 
         ]}
         buttonText="Fale com um especialista"
@@ -118,9 +123,9 @@ const LifePlusLanding = () => {
 
       <section className="px-4 py-16 bg-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-8">Ainda tem dúvidas?</h2>
+          <h2 className="text-3xl font-bold mb-8">Pronto para transformar a gestão da sua clínica ou hospital?</h2>
           <p className="text-xl text-gray-600 mb-8">
-            Agende uma demonstração gratuita com nossa equipe e descubra como o Live Plus pode transformar sua clínica
+          O Live Plus é a ferramenta que você precisa para crescer, reduzir custos e oferecer um atendimento de excelência. <strong>Agende uma demonstração gratuita</strong> e veja como podemos ajudar seu negócio a alcançar novos patamares
           </p>
           <button className="bg-[#009ee3] text-white py-3 px-8 rounded-lg text-lg hover:bg-[#008cc7] transition-colors duration-300">
             Agendar Demonstração

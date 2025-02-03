@@ -7,24 +7,24 @@ const FAQAccordion = () => {
   const [openIndex, setOpenIndex] = useState(null);
   const faqData = [
     {
-      question: "Como o Live Plus pode ajudar na gestão da minha clínica?",
-      answer: "O Live Plus oferece um conjunto completo de ferramentas para gestão de clínicas, incluindo agendamento de consultas, gestão financeira, prontuário eletrônico e telemedicina. Nossa plataforma ajuda a otimizar processos, reduzir custos operacionais e melhorar a experiência dos pacientes."
+      question: "Por que escolher o Live Plus para minha clínica ou hospital?",
+      answer: "O Live Plus é a solução completa para otimizar a gestão da sua clínica ou hospital. Com funcionalidades como controle financeiro, gestão de agendas, estoques, telemedicina e análise de performance, ele reduz custos, aumenta a eficiência e melhora a experiência dos pacientes. Tudo isso em uma única plataforma, fácil de usar e adaptável ao seu negócio."
     },
     {
-      question: "Quanto tempo leva para implementar o sistema?",
-      answer: "A implementação básica do Live Plus pode ser feita em apenas 24 horas. Oferecemos treinamento completo para sua equipe e suporte durante todo o processo de transição. A migração de dados existentes, quando necessária, é realizada de forma segura e eficiente."
+      question: "Como o Live Plus pode melhorar o controle financeiro do meu negócio?",
+      answer: "O Live Plus oferece ferramentas poderosas para Contas a Receber e Contas a Pagar, com relatórios detalhados, alertas de vencimento e agendamento de pagamentos. Além disso, o Fluxo de Caixa é monitorado em tempo real, com projeções financeiras que ajudam você a tomar decisões mais estratégicas e garantir a saúde financeira da sua clínica."
     },
     {
-      question: "O sistema é seguro e atende às regulamentações de saúde?",
-      answer: "Sim, o Live Plus segue todas as normas da LGPD e as regulamentações específicas do setor de saúde. Utilizamos criptografia de ponta a ponta, backup automático e servidores seguros para proteger os dados dos pacientes e da clínica."
+      question: "O Live Plus realmente facilita a gestão de agendas?",
+      answer: "Com certeza! O sistema elimina a confusão de agendas manuais, permitindo agendamentos, edições e cancelamentos em poucos cliques. Você visualiza a agenda de cada profissional de forma clara, evita conflitos de horários e garante que nenhum compromisso seja esquecido. Tudo isso resulta em mais produtividade e menos estresse para sua equipe."
     },
     {
-      question: "Como funciona a integração com convênios médicos?",
-      answer: "Nossa plataforma oferece integração automática com os principais convênios médicos do mercado, permitindo faturamento eletrônico, verificação de elegibilidade em tempo real e gestão completa do processo de autorização de procedimentos."
+      question: "Como o Live Plus ajuda a reduzir custos com estoque?",
+      answer: "O módulo de Gestão de Estoques do Live Plus evita desperdícios e falta de materiais críticos. O sistema alerta sobre níveis baixos de estoque, controla a validade de medicamentos e gera relatórios de consumo para que você compre apenas o necessário. Além disso, a integração com fornecedores permite reposição automática, economizando tempo e dinheiro."
     },
     {
-      question: "Posso acessar o sistema de qualquer lugar?",
-      answer: "Sim, o Live Plus é uma solução 100% na nuvem, permitindo acesso seguro de qualquer dispositivo com conexão à internet. Você pode gerenciar sua clínica, acessar prontuários e realizar atendimentos mesmo quando estiver fora do consultório."
+      question: "O Live Plus é adequado para oferecer telemedicina?",
+      answer: "Sim! O Live Plus inclui uma plataforma de telemedicina segura e integrada, que permite realizar consultas à distância com total conformidade com a LGPD. Você pode agendar consultas, enviar convites para videoconferências e registrar prontuários digitais diretamente no sistema. É a solução ideal para expandir seus serviços e atender mais pacientes, onde quer que estejam."
     }
   ];
 
