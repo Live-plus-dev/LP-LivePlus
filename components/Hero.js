@@ -199,7 +199,7 @@ const Hero = () => {
                   muted
                   playsInline
                 >
-                  <source src="/teste.mp4" type="video/mp4" />
+                  <source src="/video-demo.mp4" type="video/mp4" />
                   Seu navegador não suporta o elemento de vídeo.
                 </video>
               </div>

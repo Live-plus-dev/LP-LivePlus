@@ -59,7 +59,6 @@ const DashboardMedico = () => {
 
   return (
     <div className="w-full max-w-6xl mx-auto p-4 space-y-8 bg-white">
-      {/* Seção de Cards */}
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
         {cards.map((card, index) => {
           const Icon = card.icon;
@@ -106,21 +105,8 @@ const DashboardMedico = () => {
         })}
       </div>
 
-      {/* Seção de Conteúdo */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Seção de Demonstração */}
-        <div className="bg-white rounded-lg p-8 flex items-center justify-center min-h-[300px] shadow-lg transition-all duration-500">
-          <div className="text-gray-500 text-center transform transition-transform duration-500 hover:scale-105">
-            <img 
-              src="/api/placeholder/600/400" 
-              alt="Demonstração do recurso" 
-              className="rounded-lg shadow-md w-full"
-            />
-          </div>
-        </div>
-
-        {/* Detalhes do Conteúdo */}
-        <div className="space-y-6 transform transition-all duration-500">
+      <div className="grid grid-cols-1 gap-8">
+        <div className="space-y-6 transform transition-all duration-500 text-center">
           <h2 className="text-2xl font-bold text-[#009EE3]">{cards[selectedCard].title}</h2>
           <p className="text-gray-600">{cards[selectedCard].subtitle}</p>
           
@@ -128,7 +114,7 @@ const DashboardMedico = () => {
             {cards[selectedCard].features.map((feature, index) => (
               <li 
                 key={index} 
-                className="flex items-start transform transition-all duration-500 hover:translate-x-2"
+                className="flex items-center justify-center transform transition-all duration-500 hover:translate-x-2"
               >
                 <span className="mr-2 text-[#009EE3]">•</span>
                 {feature}

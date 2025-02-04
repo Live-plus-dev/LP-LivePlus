@@ -83,7 +83,7 @@ const LifePlusLanding = () => {
       <PricingCard
         title="Plus"
         subtitle="Otimize tempo e aumente a satisfação dos pacientes"
-        price="R$129/mês"
+        price="R$199/mês"
         period="por profissional de saúde"
         features={[
           "Tudo do Starter, mais:",
@@ -100,8 +100,8 @@ const LifePlusLanding = () => {
       <PricingCard
         title="Pro"
         subtitle="Tenha mais controle financeiro do consultório"
-        price="R$169/mês"
-        period="por profissional de saúde"
+        price="Customizado"
+        period=""
         features={[
           "Tudo do Plus, mais:",
           "Gestão de Requisições de Funcionalidades",
