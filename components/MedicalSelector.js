@@ -122,28 +122,30 @@ const DashboardMedico = () => {
             ))}
           </ul>
 
-          <button 
-            className="
-              mt-6
-              px-6 
-              py-3 
-              bg-[#009EE3] 
-              text-white 
-              rounded-md 
-              hover:bg-[#007bb3] 
-              transition-all 
-              duration-500
-              transform
-              hover:scale-105
-              hover:shadow-lg
-              focus:outline-none 
-              focus:ring-2 
-              focus:ring-[#009EE3] 
-              focus:ring-offset-2
-            "
-          >
-            Saiba Mais
-          </button>
+          <a href="https://calendly.com/contato-liveplus">
+            <button 
+              className="
+                mt-6
+                px-6 
+                py-3 
+                bg-[#009EE3] 
+                text-white 
+                rounded-md 
+                hover:bg-[#007bb3] 
+                transition-all 
+                duration-500
+                transform
+                hover:scale-105
+                hover:shadow-lg
+                focus:outline-none 
+                focus:ring-2 
+                focus:ring-[#009EE3] 
+                focus:ring-offset-2
+              "
+            >
+              Saiba Mais
+            </button>
+          </a>
         </div>
       </div>
     </div>

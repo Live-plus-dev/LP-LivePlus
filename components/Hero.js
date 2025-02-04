@@ -33,13 +33,13 @@ const Hero = () => {
           <div className="flex items-center h-20 relative">
             {/* Navigation Links - Desktop */}
             <div className="hidden md:flex items-center space-x-8 ml-4">
-              <Link href="/individuals" className="text-gray-700 hover:text-[#009ee3]">
+              <Link href="#" className="text-gray-700 hover:text-[#009ee3]">
                 Planos
               </Link>
-              <Link href="/organizations" className="text-gray-700 hover:text-[#009ee3]">
+              <Link href="#" className="text-gray-700 hover:text-[#009ee3]">
                 Sobre nós
               </Link>
-              <Link href="/clinicians" className="text-gray-700 hover:text-[#009ee3]">
+              <Link href="#" className="text-gray-700 hover:text-[#009ee3]">
                 Contato
               </Link>
             </div>
@@ -60,7 +60,7 @@ const Hero = () => {
             {/* Auth Buttons */}
             <div className="hidden md:flex items-center ml-auto">
               <Link
-                href="/register"
+                href="https://calendly.com/contato-liveplus"
                 className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors"
               >
                 Cadastre-se
@@ -103,17 +103,17 @@ const Hero = () => {
           {isOpen && (
             <div className="md:hidden pb-4 mt-4 bg-white shadow-lg rounded-xl">
               <div className="flex flex-col space-y-4 p-4">
-                <Link href="/individuals" className="text-gray-700 hover:text-[#009ee3] text-center">
+                <Link href="#" className="text-gray-700 hover:text-[#009ee3] text-center">
                   Planos
                 </Link>
-                <Link href="/organizations" className="text-gray-700 hover:text-[#009ee3] text-center">
+                <Link href="#" className="text-gray-700 hover:text-[#009ee3] text-center">
                   Sobre Nós
                 </Link>
-                <Link href="/clinicians" className="text-gray-700 hover:text-[#009ee3] text-center">
+                <Link href="#" className="text-gray-700 hover:text-[#009ee3] text-center">
                   Contato
                 </Link>
                 <Link
-                  href="/register"
+                  href="https://calendly.com/contato-liveplus"
                   className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors text-center"
                 >
                   Cadastre-se
@@ -155,9 +155,9 @@ const Hero = () => {
             <p className="text-xl text-gray-600 mb-8">
               A solução completa de gestão para Clínicas, Hospitais e Profissionais da Saúde independentes, tudo em um único lugar.
             </p>
-            <button className="bg-[#009ee3] text-white py-3 px-8 rounded-lg text-lg hover:bg-[#008cc7] transition-colors duration-300">
+            <a href='https://calendly.com/contato-liveplus'><button className="bg-[#009ee3] text-white py-3 px-8 rounded-lg text-lg hover:bg-[#008cc7] transition-colors duration-300">
               Experimente Agora
-            </button>
+            </button></a>
           </div>
           
           {/* Video Section with 3D Effect */}

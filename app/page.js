@@ -127,9 +127,11 @@ const LifePlusLanding = () => {
           <p className="text-xl text-gray-600 mb-8">
           O Live Plus é a ferramenta que você precisa para crescer, reduzir custos e oferecer um atendimento de excelência. <strong>Agende uma demonstração gratuita</strong> e veja como podemos ajudar seu negócio a alcançar novos patamares
           </p>
-          <button className="bg-[#009ee3] text-white py-3 px-8 rounded-lg text-lg hover:bg-[#008cc7] transition-colors duration-300">
-            Agendar Demonstração
-          </button>
+          <a href="https://calendly.com/contato-liveplus">
+            <button className="bg-[#009ee3] text-white py-3 px-8 rounded-lg text-lg hover:bg-[#008cc7] transition-colors duration-300">
+              Agendar Demonstração
+            </button>
+          </a>
         </div>
       </section>
 
