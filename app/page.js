@@ -92,6 +92,8 @@ const LifePlusLanding = () => {
           "Gestão de Retornos",
           "Gestão de Performance",
           "Gestão de Estoques",
+          "Integração com WhatsApp",
+
         ]}
         featured={true}
         tag="Mais escolhido"
@@ -105,7 +107,6 @@ const LifePlusLanding = () => {
         features={[
           "Tudo do Plus, mais:",
           "Gestão de Requisições de Funcionalidades",
-          "Integração com WhatsApp",
           
          
 
