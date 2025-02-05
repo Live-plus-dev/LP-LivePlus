@@ -1,8 +1,8 @@
 "use client"
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-import PricingCard from '@/components/pricingcard';
+import PricingCard, { WaitlistModal } from '@/components/pricingcard';  // Corrected import
 import FeatureCard from '@/components/featurecard';
 import Hero from '@/components/Hero';
 import ComparisonTable from '@/components/ComparisionTable';
@@ -12,6 +12,8 @@ import DashboardMedico from '@/components/MedicalSelector';
 import CrispChat from '@/components/CrispChat';
 
 const LifePlusLanding = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   const features = [
     {
       title: "Gestão de Agendas",
@@ -33,14 +35,19 @@ const LifePlusLanding = () => {
     }
   ];
 
+  // Demo features for the demonstration modal
+  const demoFeatures = [
+    "Demonstração completa do sistema",
+    "Apresentação personalizada",
+    "Esclarecimento de dúvidas",
+    "Avaliação das suas necessidades",
+    "Proposta personalizada"
+  ];
+
   return (
     <div className="font-['Segoe UI'] text-gray-800">
-
-      <CrispChat></CrispChat>
-
-
-
-      <Hero/>
+      <CrispChat />
+      <Hero />
 
       <section className="px-4 py-16 bg-white">
         <div className="container mx-auto">
@@ -56,87 +63,92 @@ const LifePlusLanding = () => {
           </div>
         </div>
       </section>
-      <section className="px-4 py-16 bg-white">
-      <DashboardMedico/>
+      
+      <section className="px-4 py-16 bg-white" id='Demos'>
+        <DashboardMedico />
       </section>
+      
       <ComparisonTable />
-
       
       <section className="px-4 py-16 bg-white">
-  <div className="container mx-auto">
-    <div className="grid md:grid-cols-3 gap-8">
-      <PricingCard
-        title="Starter"
-        subtitle="Agenda, prontuário e prescrição integrados"
-        price="R$149/mês"
-        period="por profissional de saúde"
-        features={[
-          "Contas a Receber",
-          "Contas a Pagar",
-          "Gestão de Agendas",
-          "Gestão de Procedimentos",
-          "Gestão financeira",
-          "Telemedicina"
-        ]}
-        buttonText="Selecionar plano"
-      />
-      <PricingCard
-        title="Plus"
-        subtitle="Otimize tempo e aumente a satisfação dos pacientes"
-        price="R$199/mês"
-        period="por profissional de saúde"
-        features={[
-          "Tudo do Starter, mais:",
-          "Aprovação de Convênios",
-          "Histórico de Procedimentos",
-          "Gestão de Retornos",
-          "Gestão de Performance",
-          "Gestão de Estoques",
-        ]}
-        featured={true}
-        tag="Mais escolhido"
-        buttonText="Selecionar plano"
-      />
-      <PricingCard
-        title="Pro"
-        subtitle="Tenha mais controle financeiro do consultório"
-        price="Customizado"
-        period=""
-        features={[
-          "Tudo do Plus, mais:",
-          "Gestão de Requisições de Funcionalidades",
-          "Integração com WhatsApp",
-          
-         
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-3 gap-8" id='Planos'>
+            <PricingCard
+              title="Starter"
+              subtitle="Agenda, prontuário e prescrição integrados"
+              price="R$149/mês"
+              period="por profissional de saúde"
+              features={[
+                "Contas a Receber",
+                "Contas a Pagar",
+                "Gestão de Agendas",
+                "Gestão de Procedimentos",
+                "Gestão financeira",
+                "Telemedicina"
+              ]}
+              buttonText="Selecionar plano"
+            />
+            <PricingCard
+              title="Plus"
+              subtitle="Otimize tempo e aumente a satisfação dos pacientes"
+              price="R$199/mês"
+              period="por profissional de saúde"
+              features={[
+                "Tudo do Starter, mais:",
+                "Aprovação de Convênios",
+                "Histórico de Procedimentos",
+                "Gestão de Retornos",
+                "Gestão de Performance",
+                "Gestão de Estoques",
+                "Integração com WhatsApp",
+              ]}
+              featured={true}
+              tag="Mais escolhido"
+              buttonText="Selecionar plano"
+            />
+            <PricingCard
+              title="Pro"
+              subtitle="Tenha mais controle financeiro do consultório"
+              price="Customizado"
+              period=""
+              features={[
+                "Tudo do Plus, mais:",
+                "Gestão de Requisições de Funcionalidades",
+                
+              ]}
+              buttonText="Fale com um especialista"
+            />
+          </div>
+        </div>
+      </section>
 
-        ]}
-        buttonText="Fale com um especialista"
-      />
-    </div>
-  </div>
-</section>
-
-      <div className='bg-white'>
-        <FAQAccordion/>
-
+      <div className='bg-white' id='FAQ'>
+        <FAQAccordion />
       </div>
 
       <section className="px-4 py-16 bg-white">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl font-bold mb-8">Pronto para transformar a gestão da sua clínica ou hospital?</h2>
           <p className="text-xl text-gray-600 mb-8">
-          O Live Plus é a ferramenta que você precisa para crescer, reduzir custos e oferecer um atendimento de excelência. <strong>Agende uma demonstração gratuita</strong> e veja como podemos ajudar seu negócio a alcançar novos patamares
+            O Live Plus é a ferramenta que você precisa para crescer, reduzir custos e oferecer um atendimento de excelência. <strong>Agende uma demonstração gratuita</strong> e veja como podemos ajudar seu negócio a alcançar novos patamares
           </p>
-          <a href="https://calendly.com/contato-liveplus">
-            <button className="bg-[#009ee3] text-white py-3 px-8 rounded-lg text-lg hover:bg-[#008cc7] transition-colors duration-300">
-              Agendar Demonstração
-            </button>
-          </a>
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className="bg-[#009ee3] text-white py-3 px-8 rounded-lg text-lg hover:bg-[#008cc7] transition-colors duration-300"
+          >
+            Agendar Demonstração
+          </button>
         </div>
       </section>
 
-      <Footer/>
+      <Footer></Footer>
 
+      <WaitlistModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        planTitle="Demonstração Gratuita"
+        features={demoFeatures}
+      />
     </div>
   );
 };

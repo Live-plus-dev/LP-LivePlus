@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check } from 'lucide-react';
 
-const WaitlistModal = ({ isOpen, onClose, planTitle }) => {
+export const WaitlistModal = ({ isOpen, onClose, planTitle, features = [] }) => {
   const [formData, setFormData] = useState({ name: '', email: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -79,9 +79,14 @@ const WaitlistModal = ({ isOpen, onClose, planTitle }) => {
           </button>
 
           <div className="mb-6">
-            <h2 className="text-2xl font-bold text-gray-900">Entre para nossa lista de espera</h2>
+            <h2 className="text-2xl font-bold text-gray-900">
+              {planTitle === "Demonstração Gratuita" ? "Agende sua demonstração" : "Entre para nossa lista de espera"}
+            </h2>
             <p className="mt-2 text-sm text-gray-500">
-              Inscreva-se para o plano {planTitle} e seja um dos primeiros a saber quando estiver disponível.
+              {planTitle === "Demonstração Gratuita" 
+                ? "Preencha seus dados para agendar uma demonstração personalizada do Live Plus."
+                : `Inscreva-se para o plano ${planTitle} e seja um dos primeiros a saber quando estiver disponível.`
+              }
             </p>
           </div>
 
@@ -196,7 +201,7 @@ const WaitlistModal = ({ isOpen, onClose, planTitle }) => {
                     type="button"
                     onClick={handleClose}
                     disabled={isSubmitting}
-                    className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#009ee3] focus:ring-offset-2"
+                    className="rounded-lg border border-gray-300 bg-white px-4 py-2text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#009ee3] focus:ring-offset-2"
                   >
                     Cancelar
                   </button>
@@ -210,7 +215,7 @@ const WaitlistModal = ({ isOpen, onClose, planTitle }) => {
   );
 };
 
-const PricingCard = ({ 
+export const PricingCard = ({ 
   title, 
   subtitle,
   price, 
@@ -279,6 +284,7 @@ const PricingCard = ({
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         planTitle={title}
+        features={features}
       />
     </>
   );

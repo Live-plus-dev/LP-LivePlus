@@ -5,27 +5,25 @@ import React from 'react';
 const Footer = () => {
   const footerLinks = {
     produto: [
-      { name: "Funcionalidades", href: "#" },
-      { name: "Preços", href: "#" },
-      { name: "Demonstração", href: "#" },
-      { name: "Atualizações", href: "#" },
+      { name: "Funcionalidades", href: "#Demos" },
+      { name: "Preços", href: "#Planos" },
+      { name: "Demonstração", href: "#Demos" },
+
     ],
     suporte: [
       { name: "Central de Ajuda", href: "#" },
-      { name: "Tutoriais", href: "#" },
-      { name: "FAQ", href: "#" },
-      { name: "Contato", href: "#" },
+      { name: "FAQ", href: "#FAQ" },
+      { name: "Contato", href: "https://calendly.com/contato-liveplus" },
     ],
     legal: [
       { name: "Termos de Uso", href: "/termos" },
-      { name: "Privacidade", href: "#" },
-      { name: "Cookies", href: "#" },
-      { name: "Licenças", href: "#" },
+      { name: "Privacidade", href: "/termos" },
+    
     ],
   };
 
   return (
-    <footer className="bg-gray-50 px-4 py-12">
+    <footer className="bg-gray-50 px-4 py-12" id='footer'>
       <div className="container mx-auto">
         <div className="grid md:grid-cols-4 gap-8">
           <div>

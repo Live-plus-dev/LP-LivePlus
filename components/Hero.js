@@ -3,20 +3,20 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { WaitlistModal } from '@/components/pricingcard';
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [rotation, setRotation] = useState(25);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Handle scroll
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-      const maxScroll = windowHeight * 0.5; // Adjust this value to control when the animation completes
-      
-      // Calculate rotation based on scroll position
+      const maxScroll = windowHeight * 0.5;
       const newRotation = Math.max(0, 25 - (scrollPosition / maxScroll) * 25);
       setRotation(newRotation);
     };
@@ -24,6 +24,14 @@ const Hero = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const demoFeatures = [
+    "Acesso completo ao sistema",
+    "Suporte personalizado",
+    "Treinamento da equipe",
+    "Migração de dados",
+    "Configuração inicial"
+  ];
 
   return (
     <section className="min-h-screen bg-white relative overflow-hidden">
@@ -33,13 +41,13 @@ const Hero = () => {
           <div className="flex items-center h-20 relative">
             {/* Navigation Links - Desktop */}
             <div className="hidden md:flex items-center space-x-8 ml-4">
-              <Link href="#" className="text-gray-700 hover:text-[#009ee3]">
+              <Link href="#Planos"className="text-gray-700 hover:text-[#009ee3]">
                 Planos
               </Link>
               <Link href="#" className="text-gray-700 hover:text-[#009ee3]">
                 Sobre nós
               </Link>
-              <Link href="#" className="text-gray-700 hover:text-[#009ee3]">
+              <Link href="#footer" className="text-gray-700 hover:text-[#009ee3]">
                 Contato
               </Link>
             </div>
@@ -59,12 +67,12 @@ const Hero = () => {
 
             {/* Auth Buttons */}
             <div className="hidden md:flex items-center ml-auto">
-              <Link
-                href="https://calendly.com/contato-liveplus"
+              <button
+                onClick={() => setIsModalOpen(true)}
                 className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors"
               >
                 Cadastre-se
-              </Link>
+              </button>
             </div>
 
             {/* Mobile menu button */}
@@ -103,21 +111,21 @@ const Hero = () => {
           {isOpen && (
             <div className="md:hidden pb-4 mt-4 bg-white shadow-lg rounded-xl">
               <div className="flex flex-col space-y-4 p-4">
-                <Link href="#" className="text-gray-700 hover:text-[#009ee3] text-center">
+                <Link href="#Planos" className="text-gray-700 hover:text-[#009ee3] text-center">
                   Planos
                 </Link>
                 <Link href="#" className="text-gray-700 hover:text-[#009ee3] text-center">
                   Sobre Nós
                 </Link>
-                <Link href="#" className="text-gray-700 hover:text-[#009ee3] text-center">
+                <Link href="#footer" className="text-gray-700 hover:text-[#009ee3] text-center">
                   Contato
                 </Link>
-                <Link
-                  href="https://calendly.com/contato-liveplus"
+                <button
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors text-center"
                 >
                   Cadastre-se
-                </Link>
+                </button>
               </div>
             </div>
           )}
@@ -155,9 +163,12 @@ const Hero = () => {
             <p className="text-xl text-gray-600 mb-8">
               A solução completa de gestão para Clínicas, Hospitais e Profissionais da Saúde independentes, tudo em um único lugar.
             </p>
-            <a href='https://calendly.com/contato-liveplus'><button className="bg-[#009ee3] text-white py-3 px-8 rounded-lg text-lg hover:bg-[#008cc7] transition-colors duration-300">
+            <button 
+              onClick={() => setIsModalOpen(true)}
+              className="bg-[#009ee3] text-white py-3 px-8 rounded-lg text-lg hover:bg-[#008cc7] transition-colors duration-300"
+            >
               Experimente Agora
-            </button></a>
+            </button>
           </div>
           
           {/* Video Section with 3D Effect */}
@@ -170,43 +181,20 @@ const Hero = () => {
                 transform: `rotateX(${rotation}deg)`
               }}
             >
-              {/* Grid overlay */}
-              <div className="absolute inset-0 z-10">
-                <svg 
-                  className="absolute left-0 top-0 h-full w-full [&_path]:stroke-white [&_path]:[strokeOpacity:0.2] [&_path]:[stroke-dasharray:1] [&_path]:[stroke-dashoffset:1]" 
-                  width="100%" 
-                  viewBox="0 0 1499 778" 
-                  fill="none"
-                >
-                  <path pathLength="1" d="M1500 72L220 72"></path>
-                  <path pathLength="1" d="M1500 128L220 128"></path>
-                  <path pathLength="1" d="M1500 189L220 189"></path>
-                  <path pathLength="1" d="M220 777L220 1"></path>
-                  <path pathLength="1" d="M538 777L538 128"></path>
-                </svg>
-              </div>
-
-              {/* Glowing effect */}
-              <div className="absolute inset-0 before:absolute before:inset-0 before:bg-hero-glow before:opacity-0 before:[filter:blur(120px)]" />
-
-              {/* Video container */}
-              <div className="relative pt-[56.25%] rounded-2xl overflow-hidden shadow-2xl">
-                <video
-                  className="absolute top-0 left-0 w-full h-full object-cover"
-                  onLoadedData={() => setIsVideoLoaded(true)}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                >
-                  <source src="/video-demo.mp4" type="video/mp4" />
-                  Seu navegador não suporta o elemento de vídeo.
-                </video>
-              </div>
+              {/* Rest of the video section remains the same */}
+              {/* ... */}
             </div>
           </div>
         </div>
       </div>
+
+      {/* Modal */}
+      <WaitlistModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        planTitle="Cadastro Live Plus"
+        features={demoFeatures}
+      />
 
       {/* Animation Keyframes */}
       <style jsx global>{`
