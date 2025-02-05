@@ -5,9 +5,9 @@ import React from 'react';
 const Footer = () => {
   const footerLinks = {
     produto: [
-      { name: "Funcionalidades", href: "#Demos" },
+      { name: "Funcionalidades", href: "#Demo" },
       { name: "Preços", href: "#Planos" },
-      { name: "Demonstração", href: "#Demos" },
+      { name: "Demonstração", href: "#Demo" },
 
     ],
     suporte: [
