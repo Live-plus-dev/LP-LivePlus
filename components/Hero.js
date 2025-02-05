@@ -181,12 +181,44 @@ const Hero = () => {
                 transform: `rotateX(${rotation}deg)`
               }}
             >
-              {/* Rest of the video section remains the same */}
-              {/* ... */}
+              {/* Grid overlay */}
+              <div className="absolute inset-0 z-10">
+                <svg 
+                  className="absolute left-0 top-0 h-full w-full [&_path]:stroke-white [&_path]:[strokeOpacity:0.2] [&_path]:[stroke-dasharray:1] [&_path]:[stroke-dashoffset:1]" 
+                  width="100%" 
+                  viewBox="0 0 1499 778" 
+                  fill="none"
+                >
+                  <path pathLength="1" d="M1500 72L220 72"></path>
+                  <path pathLength="1" d="M1500 128L220 128"></path>
+                  <path pathLength="1" d="M1500 189L220 189"></path>
+                  <path pathLength="1" d="M220 777L220 1"></path>
+                  <path pathLength="1" d="M538 777L538 128"></path>
+                </svg>
+              </div>
+
+              {/* Glowing effect */}
+              <div className="absolute inset-0 before:absolute before:inset-0 before:bg-hero-glow before:opacity-0 before:[filter:blur(120px)]" />
+
+              {/* Video container */}
+              <div className="relative pt-[56.25%] rounded-2xl overflow-hidden shadow-2xl">
+                <video
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                  onLoadedData={() => setIsVideoLoaded(true)}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src="/video-demo.mp4" type="video/mp4" />
+                  Seu navegador não suporta o elemento de vídeo.
+                </video>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
 
       {/* Modal */}
       <WaitlistModal
