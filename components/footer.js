@@ -15,8 +15,7 @@ const Footer = () => {
       { name: "Contato", href: "#", onClick: () => window.$crisp.push(["do", "chat:open"]) },
     ],
     legal: [
-      { name: "Termos de Uso", href: "/termos" },
-      { name: "Privacidade", href: "/termos" },
+      { name: "Termos de Uso e Privacidade", href: "/termos" },
     ],
   };
 
