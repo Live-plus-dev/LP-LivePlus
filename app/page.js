@@ -56,7 +56,7 @@ const LifePlusLanding = () => {
           </div>
         </div>
       </section>
-      <section className="px-4 py-16 bg-white" id='Demo'>
+      <section className="px-4 py-16 bg-white" id='Features'>
       <DashboardMedico/>
       </section>
       <ComparisonTable />

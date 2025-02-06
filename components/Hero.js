@@ -44,7 +44,7 @@ const Hero = () => {
               <Link href="#Planos"className="text-gray-700 hover:text-[#009ee3]">
                 Planos
               </Link>
-              <Link href="#" className="text-gray-700 hover:text-[#009ee3]">
+              <Link href="/sobre" className="text-gray-700 hover:text-[#009ee3]">
                 Sobre nós
               </Link>
               <Link href="#footer" className="text-gray-700 hover:text-[#009ee3]">
@@ -158,10 +158,10 @@ const Hero = () => {
         <div className="container mx-auto flex flex-col items-center relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-12 animate-fadeIn">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-              Otimize o seu dia a dia de maneira eficiente!
+            Tecnologia que conecta e transforma a gestão da saúde!
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              A solução completa de gestão para Clínicas, Hospitais e Profissionais da Saúde independentes, tudo em um único lugar.
+            A solução completa de gestão  para Clínicas, Hospitais e Profissionais da Saúde independentes, tudo em um único lugar.
             </p>
             <button 
               onClick={() => setIsModalOpen(true)}
@@ -172,7 +172,7 @@ const Hero = () => {
           </div>
           
           {/* Video Section with 3D Effect */}
-          <div className="[perspective:2000px] w-full max-w-5xl mx-auto">
+          <div className="[perspective:2000px] w-full max-w-5xl mx-auto" id='Video-demo'>
             <div 
               className={`relative transition-transform duration-300 ease-out
                 ${isVideoLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}

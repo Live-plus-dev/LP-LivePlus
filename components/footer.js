@@ -5,13 +5,13 @@ import React from 'react';
 const Footer = () => {
   const footerLinks = {
     produto: [
-      { name: "Funcionalidades", href: "#Demo" },
+      { name: "Funcionalidades", href: "#Features" },
       { name: "Preços", href: "#Planos" },
-      { name: "Demonstração", href: "#Demo" },
+      { name: "Demonstração", href: "#Video-demo" },
 
     ],
     suporte: [
-      { name: "Central de Ajuda", href: "#" },
+      { name: "Central de Ajuda", href: "https://calendly.com/contato-liveplus" },
       { name: "FAQ", href: "#FAQ" },
       { name: "Contato", href: "https://calendly.com/contato-liveplus" },
     ],
