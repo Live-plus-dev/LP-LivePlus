@@ -37,7 +37,7 @@ const LifePlusLanding = () => {
     <div className="font-['Segoe UI'] text-gray-800">
 
       <CrispChat></CrispChat>
-
+  
 
 
       <Hero/>
