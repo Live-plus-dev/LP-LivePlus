@@ -125,7 +125,7 @@ const Hero = () => {
                 <Link href="#Planos" className="text-gray-700 hover:text-[#009ee3] text-center">
                   Planos
                 </Link>
-                <Link href="#" className="text-gray-700 hover:text-[#009ee3] text-center">
+                <Link href="/sobre" className="text-gray-700 hover:text-[#009ee3] text-center">
                   Sobre Nós
                 </Link>
                 <a 
