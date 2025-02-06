@@ -41,24 +41,42 @@ const AboutPage = () => {
     "Configuração inicial"
   ];
 
+  const NavigationLinks = ({ isMobile = false }) => (
+    <>
+      <Link 
+        href="/#Planos" 
+        className={`text-gray-700 hover:text-[#009ee3] ${isMobile ? 'text-center' : ''}`}
+        onClick={() => isMobile && setIsOpen(false)}
+      >
+        Planos
+      </Link>
+      <Link 
+        href="/sobre" 
+        className={`text-gray-700 hover:text-[#009ee3] ${isMobile ? 'text-center' : ''}`}
+        onClick={() => isMobile && setIsOpen(false)}
+      >
+        Sobre nós
+      </Link>
+      <Link 
+        href="/#footer" 
+        className={`text-gray-700 hover:text-[#009ee3] ${isMobile ? 'text-center' : ''}`}
+        onClick={() => isMobile && setIsOpen(false)}
+      >
+        Contato
+      </Link>
+    </>
+  );
+
   return (
     <div className="min-h-screen bg-white">
-            <CrispChat></CrispChat>
+      <CrispChat />
 
       {/* Navbar */}
       <nav className="w-full flex justify-center mt-8">
         <div className="w-[80%] bg-white shadow-lg rounded-full px-4">
           <div className="flex items-center h-20 relative">
             <div className="hidden md:flex items-center space-x-8 ml-4">
-              <Link href="/#Planos" className="text-gray-700 hover:text-[#009ee3]">
-                Planos
-              </Link>
-              <Link href="#" className="text-gray-700 hover:text-[#009ee3]">
-                Sobre nós
-              </Link>
-              <Link href="/#footer" className="text-gray-700 hover:text-[#009ee3]">
-                Contato
-              </Link>
+              <NavigationLinks />
             </div>
 
             <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
@@ -113,20 +131,16 @@ const AboutPage = () => {
             </div>
           </div>
 
+          {/* Mobile Menu */}
           {isOpen && (
             <div className="md:hidden pb-4 mt-4 bg-white shadow-lg rounded-xl">
               <div className="flex flex-col space-y-4 p-4">
-                <Link href="#Planos" className="text-gray-700 hover:text-[#009ee3] text-center">
-                  Planos
-                </Link>
-                <Link href="#" className="text-gray-700 hover:text-[#009ee3] text-center">
-                  Sobre Nós
-                </Link>
-                <Link href="#footer" className="text-gray-700 hover:text-[#009ee3] text-center">
-                  Contato
-                </Link>
+                <NavigationLinks isMobile={true} />
                 <button
-                  onClick={() => setIsModalOpen(true)}
+                  onClick={() => {
+                    setIsModalOpen(true);
+                    setIsOpen(false);
+                  }}
                   className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors text-center"
                 >
                   Cadastre-se
