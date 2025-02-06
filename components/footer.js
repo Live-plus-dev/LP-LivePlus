@@ -10,7 +10,11 @@ const Footer = () => {
       { name: "Demonstração", href: "#Video-demo" },
     ],
     suporte: [
-      { name: "Central de Ajuda", href: "https://calendly.com/contato-liveplus" },
+      { 
+        name: "Central de Ajuda", 
+        href: "/ajuda",
+        onClick: () => window.location.href = "https://calendly.com/contato-liveplus"
+      },
       { name: "FAQ", href: "#FAQ" },
       { name: "Contato", href: "#", onClick: () => window.$crisp.push(["do", "chat:open"]) },
     ],
