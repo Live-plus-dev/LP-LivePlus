@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { WaitlistModal } from '@/components/pricingcard';
+import CrispChat from '@/components/CrispChat';
 
 const AboutPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,6 +43,8 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+            <CrispChat></CrispChat>
+
       {/* Navbar */}
       <nav className="w-full flex justify-center mt-8">
         <div className="w-[80%] bg-white shadow-lg rounded-full px-4">

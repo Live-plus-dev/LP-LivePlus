@@ -122,7 +122,7 @@ const Hero = () => {
           {isOpen && (
             <div className="md:hidden pb-4 mt-4 bg-white shadow-lg rounded-xl">
               <div className="flex flex-col space-y-4 p-4">
-                <Link href="#Planos" className="text-gray-700 hover:text-[#009ee3] text-center">
+                <Link href="/#Planos" className="text-gray-700 hover:text-[#009ee3] text-center">
                   Planos
                 </Link>
                 <Link href="/sobre" className="text-gray-700 hover:text-[#009ee3] text-center">
