@@ -12,7 +12,7 @@ const Footer = () => {
     suporte: [
       { name: "Central de Ajuda", href: "https://calendly.com/contato-liveplus" },
       { name: "FAQ", href: "#FAQ" },
-      { name: "Contato", href: "https://calendly.com/contato-liveplus" },
+      { name: "Contato", href: "#", onClick: () => window.$crisp.push(["do", "chat:open"]) },
     ],
     legal: [
       { name: "Termos de Uso", href: "/termos" },
@@ -79,7 +79,14 @@ const Footer = () => {
                 <li key={index}>
                   <a 
                     href={link.href}
-                    onClick={(e) => handleScroll(e, link.href)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (link.onClick) {
+                        link.onClick();
+                      } else {
+                        handleScroll(e, link.href);
+                      }
+                    }}
                     className="text-gray-600 hover:text-[#009ee3]"
                   >
                     {link.name}

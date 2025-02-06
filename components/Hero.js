@@ -25,6 +25,13 @@ const Hero = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    if (window.$crisp) {
+      window.$crisp.push(["do", "chat:open"]);
+    }
+  };
+
   const demoFeatures = [
     "Acesso completo ao sistema",
     "Suporte personalizado",
@@ -41,15 +48,19 @@ const Hero = () => {
           <div className="flex items-center h-20 relative">
             {/* Navigation Links - Desktop */}
             <div className="hidden md:flex items-center space-x-8 ml-4">
-              <Link href="#Planos"className="text-gray-700 hover:text-[#009ee3]">
+              <Link href="#Planos" className="text-gray-700 hover:text-[#009ee3]">
                 Planos
               </Link>
               <Link href="/sobre" className="text-gray-700 hover:text-[#009ee3]">
                 Sobre nós
               </Link>
-              <Link href="#footer" className="text-gray-700 hover:text-[#009ee3]">
+              <a 
+                href="#" 
+                onClick={handleContactClick}
+                className="text-gray-700 hover:text-[#009ee3] cursor-pointer"
+              >
                 Contato
-              </Link>
+              </a>
             </div>
 
             {/* Logo - Centered */}
@@ -117,9 +128,13 @@ const Hero = () => {
                 <Link href="#" className="text-gray-700 hover:text-[#009ee3] text-center">
                   Sobre Nós
                 </Link>
-                <Link href="#footer" className="text-gray-700 hover:text-[#009ee3] text-center">
+                <a 
+                  href="#" 
+                  onClick={handleContactClick}
+                  className="text-gray-700 hover:text-[#009ee3] text-center cursor-pointer"
+                >
                   Contato
-                </Link>
+                </a>
                 <button
                   onClick={() => setIsModalOpen(true)}
                   className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors text-center"
@@ -158,10 +173,10 @@ const Hero = () => {
         <div className="container mx-auto flex flex-col items-center relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-12 animate-fadeIn">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-800">
-            Tecnologia que conecta e transforma a gestão da saúde!
+              Tecnologia que conecta e transforma a gestão da saúde!
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-            A solução completa de gestão  para Clínicas, Hospitais e Profissionais da Saúde independentes, tudo em um único lugar.
+              A solução completa de gestão para Clínicas, Hospitais e Profissionais da Saúde independentes, tudo em um único lugar.
             </p>
             <button 
               onClick={() => setIsModalOpen(true)}
@@ -218,7 +233,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
 
       {/* Modal */}
       <WaitlistModal

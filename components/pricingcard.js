@@ -274,7 +274,7 @@ export const PricingCard = ({
           >
             {buttonText}
           </button>
-          <a href="#" className="text-sm text-gray-600 hover:underline block mt-4">
+          <a href="https://calendly.com/contato-liveplus" className="text-sm text-gray-600 hover:underline block mt-4">
             ou fale com um especialista
           </a>
         </div>
