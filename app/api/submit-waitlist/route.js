@@ -1,13 +1,10 @@
-//app/api/submit-waitlist/route.js
-
+// app/api/submit-waitlist/route.js
 import { google } from 'googleapis';
 import { NextResponse } from 'next/server';
 
 export async function POST(request) {
   try {
-    const { name, email } = await request.json();
-
-    
+    const { name, email, phone, plan } = await request.json();
 
     if (!process.env.GOOGLE_SHEETS_ID || 
         !process.env.GOOGLE_SHEETS_CLIENT_EMAIL || 
@@ -27,7 +24,6 @@ export async function POST(request) {
 
     const sheets = google.sheets({ version: 'v4', auth });
 
-    // First, verify we can access the spreadsheet
     try {
       await sheets.spreadsheets.get({
         spreadsheetId: process.env.GOOGLE_SHEETS_ID
@@ -40,13 +36,12 @@ export async function POST(request) {
       );
     }
 
-    // Then attempt to append data
     const appendResponse = await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEETS_ID,
-      range: 'A:C',
+      range: 'A:E', // Updated range to include phone and plan
       valueInputOption: 'USER_ENTERED',
       requestBody: {
-        values: [[name, email, new Date().toISOString()]],
+        values: [[name, email, phone, plan, new Date().toISOString()]],
       },
     });
 

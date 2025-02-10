@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Check } from 'lucide-react';
 
 export const WaitlistModal = ({ isOpen, onClose, planTitle, features = [] }) => {
-  const [formData, setFormData] = useState({ name: '', email: '' });
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -50,7 +50,7 @@ export const WaitlistModal = ({ isOpen, onClose, planTitle, features = [] }) => 
       onClose();
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({ name: '', email: '' });
+        setFormData({ name: '', email: '', phone: '' });
       }, 300);
     }
   };
@@ -127,7 +127,7 @@ export const WaitlistModal = ({ isOpen, onClose, planTitle, features = [] }) => 
                   transition={{ delay: 0.3 }}
                   className="text-center text-gray-500"
                 >
-                  Entraremos em contato através do email: {formData.email}
+                  Entraremos em contato através do email: {formData.email} ou telefone: {formData.phone}
                 </motion.p>
 
                 <motion.button
@@ -158,6 +158,20 @@ export const WaitlistModal = ({ isOpen, onClose, planTitle, features = [] }) => 
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-[#009ee3] focus:outline-none focus:ring-1 focus:ring-[#009ee3]"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                    Telefone
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="mt-1 block w-full rounded-lg border border-gray-300 px-3 py-2 shadow-sm focus:border-[#009ee3] focus:outline-none focus:ring-1 focus:ring-[#009ee3]"
                   />
                 </div>
@@ -201,7 +215,7 @@ export const WaitlistModal = ({ isOpen, onClose, planTitle, features = [] }) => 
                     type="button"
                     onClick={handleClose}
                     disabled={isSubmitting}
-                    className="rounded-lg border border-gray-300 bg-white px-4 py-2text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#009ee3] focus:ring-offset-2"
+                    className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#009ee3] focus:ring-offset-2"
                   >
                     Cancelar
                   </button>
