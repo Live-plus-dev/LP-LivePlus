@@ -36,12 +36,16 @@ export async function POST(request) {
       );
     }
 
+    // Format the current date as dd/mm/yyyy
+    const currentDate = new Date();
+    const formattedDate = `${String(currentDate.getDate()).padStart(2, '0')}/${String(currentDate.getMonth() + 1).padStart(2, '0')}/${currentDate.getFullYear()}`;
+
     const appendResponse = await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEETS_ID,
-      range: 'A:E', // Updated range to include phone and plan
+      range: 'A:E',
       valueInputOption: 'USER_ENTERED',
       requestBody: {
-        values: [[name, email, phone, plan, new Date().toISOString()]],
+        values: [[name, email, phone, plan, formattedDate]],
       },
     });
 
