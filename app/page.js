@@ -10,6 +10,7 @@ import Footer from '@/components/footer';
 import FAQAccordion from '@/components/Faq';
 import DashboardMedico from '@/components/MedicalSelector';
 import CrispChat from '@/components/CrispChat';
+import AnalyticsGoogle from '@/components/AnalyticsGoogle';
 
 const LifePlusLanding = () => {
   const features = [
@@ -37,7 +38,7 @@ const LifePlusLanding = () => {
     <div className="font-['Segoe UI'] text-gray-800">
 
       <CrispChat></CrispChat>
-  
+      <AnalyticsGoogle></AnalyticsGoogle>
 
 
       <Hero/>
@@ -90,7 +91,7 @@ const LifePlusLanding = () => {
         period="por profissional de saúde"
         features={[
           "Tudo do Starter, mais:",
-          "Aprovação de Convênios",
+          "Prontuário eletrônico",
           "Histórico de Procedimentos",
           "Gestão de Retornos",
           "Gestão de Performance",
