@@ -30,7 +30,7 @@ const ComparisonTable = () => {
       pro: true
     },
     {
-      name: "Aprovação de Convênios",
+      name: "Prontuário eletrônico",
       starter: false,
       plus: true,
       pro: true
