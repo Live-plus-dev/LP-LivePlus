@@ -11,6 +11,7 @@ import FAQAccordion from '@/components/Faq';
 import DashboardMedico from '@/components/MedicalSelector';
 import CrispChat from '@/components/CrispChat';
 import AnalyticsGoogle from '@/components/AnalyticsGoogle';
+import GoogleTagManager from '@/components/GoogleTagManager';
 
 const LifePlusLanding = () => {
   const features = [
@@ -39,6 +40,7 @@ const LifePlusLanding = () => {
 
       <CrispChat></CrispChat>
       <AnalyticsGoogle></AnalyticsGoogle>
+      <GoogleTagManager></GoogleTagManager>
 
 
       <Hero/>
