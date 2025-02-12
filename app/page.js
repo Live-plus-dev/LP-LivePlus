@@ -12,6 +12,7 @@ import DashboardMedico from '@/components/MedicalSelector';
 import CrispChat from '@/components/CrispChat';
 import AnalyticsGoogle from '@/components/AnalyticsGoogle';
 import GoogleTagManager from '@/components/GoogleTagManager';
+import GoogleTag from '@/components/GoogleTag';
 
 const LifePlusLanding = () => {
   const features = [
@@ -41,6 +42,7 @@ const LifePlusLanding = () => {
       <CrispChat></CrispChat>
       <AnalyticsGoogle></AnalyticsGoogle>
       <GoogleTagManager></GoogleTagManager>
+      <GoogleTag></GoogleTag>
 
 
       <Hero/>
