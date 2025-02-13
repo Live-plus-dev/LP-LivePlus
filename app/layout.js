@@ -12,8 +12,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Live-plus",
+  title: "Live Plus",
   description: "A solução completa de gestão para Clínicas, Hospitais e Profissionais da Saúde independentes, tudo em um único lugar.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }) {
