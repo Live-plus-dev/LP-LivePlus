@@ -92,12 +92,16 @@ const AboutPage = () => {
             </div>
 
             <div className="hidden md:flex items-center ml-auto">
+              <a href='/#Planos'>
+
+            
               <button
-                onClick={() => setIsModalOpen(true)}
+            
                 className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors"
               >
                 Cadastre-se
               </button>
+              </a>
             </div>
 
             <div className="md:hidden ml-auto">
@@ -136,15 +140,15 @@ const AboutPage = () => {
             <div className="md:hidden pb-4 mt-4 bg-white shadow-lg rounded-xl">
               <div className="flex flex-col space-y-4 p-4">
                 <NavigationLinks isMobile={true} />
+                <a href='/#Planos'>
+
+               
                 <button
-                  onClick={() => {
-                    setIsModalOpen(true);
-                    setIsOpen(false);
-                  }}
                   className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors text-center"
                 >
                   Cadastre-se
                 </button>
+                </a>
               </div>
             </div>
           )}

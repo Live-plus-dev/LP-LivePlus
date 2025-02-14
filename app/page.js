@@ -73,24 +73,10 @@ const LifePlusLanding = () => {
       <section className="px-4 py-16 bg-white">
   <div className="container mx-auto">
     <div className="grid md:grid-cols-3 gap-8" id='Planos'>
-      <PricingCard
-        title="Starter"
-        subtitle="Agenda, prontuário e prescrição integrados"
-        price="R$149/mês"
-        period="por profissional de saúde"
-        features={[
-          "Contas a Receber",
-          "Contas a Pagar",
-          "Gestão de Agendas",
-          "Gestão de Procedimentos",
-          "Gestão financeira",
-          "Telemedicina"
-        ]}
-        buttonText="Selecionar plano"
-      />
+     
       <PricingCard
         title="Plus"
-        subtitle="Otimize tempo e aumente a satisfação dos pacientes"
+        subtitle="Perfeito para hospitais e clinicas maiores"
         price="R$199/mês"
         period="por profissional de saúde"
         features={[
@@ -103,11 +89,32 @@ const LifePlusLanding = () => {
           "Integração com WhatsApp",
 
         ]}
+        
+        buttonText="Lançamento em breve"
+      />
+
+<PricingCard
+        title="Starter"
+        subtitle="Perfeito para clinicas e medicos solos"
+        price="R$149/mês"
+        period="por profissional de saude"
+        features={[
+          "Contas a Receber",
+          "Contas a Pagar",
+          "Gestão de Agendas",
+          "Gestão de Procedimentos",
+          "Gestão financeira",
+          "Telemedicina",
+          "Perfil de Recepcionista grátis"
+        ]}
         featured={true}
         tag="Mais escolhido"
         buttonText="Selecionar plano"
       />
-      <PricingCard
+
+      <PricingCard         
+      
+
         title="Pro"
         subtitle="Tenha mais controle financeiro do consultório"
         price="Customizado"
@@ -119,7 +126,7 @@ const LifePlusLanding = () => {
          
 
         ]}
-        buttonText="Selecionar Plano"
+        buttonText="Agendar Demonstração"
       />
     </div>
   </div>

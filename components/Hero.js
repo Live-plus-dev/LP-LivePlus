@@ -67,13 +67,12 @@ const Hero = () => {
 
             {/* Auth Buttons */}
             <div className="hidden md:flex items-center ml-auto">
-              <button
-                onClick={() => setIsModalOpen(true)}
-                className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors"
-              >
+              <a href="#Planos"> 
+              <button className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors">
                 Cadastre-se
-              </button>
-            </div>
+              </button> 
+              </a>
+            </div> 
 
             {/* Mobile menu button */}
             <div className="md:hidden ml-auto">
@@ -120,12 +119,13 @@ const Hero = () => {
                 <Link href="#footer"  className="text-gray-700 hover:text-[#009ee3] text-center">
                   Contato
                 </Link>
+
+                <a href="#Planos">
                 <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors text-center"
-                >
+                  className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors text-center">
                   Cadastre-se
                 </button>
+                </a>
               </div>
             </div>
           )}
