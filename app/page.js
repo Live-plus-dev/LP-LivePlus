@@ -76,7 +76,7 @@ const LifePlusLanding = () => {
       <PricingCard
         title="Starter"
         subtitle="Agenda, prontuário e prescrição integrados"
-        price="R$79/mês"
+        price="R$149/mês"
         period="por profissional de saúde"
         features={[
           "Contas a Receber",
@@ -91,7 +91,7 @@ const LifePlusLanding = () => {
       <PricingCard
         title="Plus"
         subtitle="Otimize tempo e aumente a satisfação dos pacientes"
-        price="R$109/mês"
+        price="R$199/mês"
         period="por profissional de saúde"
         features={[
           "Tudo do Starter, mais:",
