@@ -38,14 +38,12 @@ const LifePlusLanding = () => {
 
   return (
     <div className="font-['Segoe UI'] text-gray-800">
+      <CrispChat />
+      <AnalyticsGoogle />
+      <GoogleTagManager />
+      <GoogleTag />
 
-      <CrispChat></CrispChat>
-      <AnalyticsGoogle></AnalyticsGoogle>
-      <GoogleTagManager></GoogleTagManager>
-      <GoogleTag></GoogleTag>
-
-
-      <Hero/>
+      <Hero />
 
       <section className="px-4 py-16 bg-white">
         <div className="container mx-auto">
@@ -61,87 +59,83 @@ const LifePlusLanding = () => {
           </div>
         </div>
       </section>
-      <section className="px-4 py-16 bg-white" >
-      <DashboardMedico/>
-      </section>
-      <div id='Features'>
-      <ComparisonTable />
 
+      <section className="px-4 py-16 bg-white">
+        <DashboardMedico />
+      </section>
+
+      <div id='Features'>
+        <ComparisonTable />
       </div>
 
-      
       <section className="px-4 py-16 bg-white">
-  <div className="container mx-auto">
-    <div className="grid md:grid-cols-3 gap-8" id='Planos'>
-     
-      <PricingCard
-        title="Plus"
-        subtitle="Perfeito para hospitais e clinicas maiores"
-        price="R$199/mês"
-        period="por profissional de saúde"
-        features={[
-          "Tudo do Starter, mais:",
-          "Prontuário eletrônico",
-          "Histórico de Procedimentos",
-          "Gestão de Retornos",
-          "Gestão de Performance",
-          "Gestão de Estoques",
-          "Integração com WhatsApp",
+        <div className="container mx-auto">
+          <div className="grid md:grid-cols-3 gap-8" id='Planos'>
+            <PricingCard
+              title="Plus"
+              subtitle="Perfeito para hospitais e clinicas maiores"
+              price="R$199/mês"
+              period="por profissional de saúde"
+              features={[
+                "Tudo do Starter, mais:",
+                "Prontuário eletrônico",
+                "Histórico de Procedimentos",
+                "Gestão de Retornos",
+                "Gestão de Performance",
+                "Gestão de Estoques",
+                "Integração com WhatsApp"
+              ]}
+              buttonText="Lançamento em breve"
+              isDisabled={true}
+            />
 
-        ]}
-        
-        buttonText="Lançamento em breve"
-      />
+            <PricingCard
+              title="Starter"
+              subtitle="Perfeito para clinicas e medicos solos"
+              price="R$149/mês"
+              period="por profissional de saude"
+              features={[
+                "Contas a Receber",
+                "Contas a Pagar",
+                "Gestão de Agendas",
+                "Gestão de Procedimentos",
+                "Gestão financeira",
+                "Telemedicina",
+                "Perfil de Recepcionista grátis"
+              ]}
+              featured={true}
+              tag="Mais escolhido"
+              buttonText="Selecionar plano"
+            />
 
-<PricingCard
-        title="Starter"
-        subtitle="Perfeito para clinicas e medicos solos"
-        price="R$149/mês"
-        period="por profissional de saude"
-        features={[
-          "Contas a Receber",
-          "Contas a Pagar",
-          "Gestão de Agendas",
-          "Gestão de Procedimentos",
-          "Gestão financeira",
-          "Telemedicina",
-          "Perfil de Recepcionista grátis"
-        ]}
-        featured={true}
-        tag="Mais escolhido"
-        buttonText="Selecionar plano"
-      />
-
-      <PricingCard         
-      
-
-        title="Pro"
-        subtitle="Tenha mais controle financeiro do consultório"
-        price="Customizado"
-        period=""
-        features={[
-          "Tudo do Plus, mais:",
-          "Gestão de Requisições de Funcionalidades",
-          
-         
-
-        ]}
-        buttonText="Agendar Demonstração"
-      />
-    </div>
-  </div>
-</section>
+            <PricingCard
+              title="Pro"
+              subtitle="Tenha mais controle financeiro do consultório"
+              price="Customizado"
+              period=""
+              features={[
+                "Tudo do Plus, mais:",
+                "Gestão de Requisições de Funcionalidades"
+              ]}
+              buttonText="Agendar Demonstração"
+              isCustom={true}
+              customLink="https://calendly.com/contato-liveplus"
+            />
+          </div>
+        </div>
+      </section>
 
       <div className='bg-white' id='FAQ'>
-        <FAQAccordion/>
-
+        <FAQAccordion />
       </div>
 
       <section className="px-4 py-16 bg-white">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-8">Pronto para transformar a gestão da sua clínica ou hospital?</h2>
+          <h2 className="text-3xl font-bold mb-8">
+            Pronto para transformar a gestão da sua clínica ou hospital?
+          </h2>
           <p className="text-xl text-gray-600 mb-8">
-          O Live Plus é a ferramenta que você precisa para crescer, reduzir custos e oferecer um atendimento de excelência. <strong>Agende uma demonstração gratuita</strong> e veja como podemos ajudar seu negócio a alcançar novos patamares
+            O Live Plus é a ferramenta que você precisa para crescer, reduzir custos e oferecer um atendimento de excelência. <strong>Agende uma demonstração gratuita</strong> e veja como podemos ajudar seu negócio a alcançar novos patamares
           </p>
           <a href="https://calendly.com/contato-liveplus">
             <button className="bg-[#009ee3] text-white py-3 px-8 rounded-lg text-lg hover:bg-[#008cc7] transition-colors duration-300">
@@ -151,8 +145,7 @@ const LifePlusLanding = () => {
         </div>
       </section>
 
-      <Footer/>
-
+      <Footer />
     </div>
   );
 };

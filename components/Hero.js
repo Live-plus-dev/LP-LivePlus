@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { WaitlistModal } from '@/components/pricingcard';
 
 const Hero = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -219,14 +218,6 @@ const Hero = () => {
         </div>
       </div>
 
-
-      {/* Modal */}
-      <WaitlistModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        planTitle="Cadastro Live Plus"
-        features={demoFeatures}
-      />
 
       {/* Animation Keyframes */}
       <style jsx global>{`
