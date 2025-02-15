@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { WaitlistModal } from '@/components/pricingcard';
 import CrispChat from '@/components/CrispChat';
 
 const AboutPage = () => {
@@ -240,14 +239,7 @@ const AboutPage = () => {
         </div>
       </main>
 
-      {/* Modal */}
-      <WaitlistModal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        planTitle="Cadastro Live Plus"
-        features={demoFeatures}
-      />
-
+     
       {/* Animations */}
       <style jsx global>{`
         .animate-fadeIn {
