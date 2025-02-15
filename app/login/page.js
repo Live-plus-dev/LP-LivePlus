@@ -86,7 +86,7 @@ export default function Home() {
               <Mail className="w-6 h-6 text-blue-600" />
             )}
           </div>
-          <h1 className="text-3xl font-bold text-gray-900">Welcome Back</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Welcome</h1>
           <p className="mt-2 text-gray-600">
             {step === 1 ? 'Enter your tenant name' : 'Sign in to your account'}
           </p>

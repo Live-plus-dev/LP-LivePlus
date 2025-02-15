@@ -6,6 +6,7 @@ import { connectDB, getTenantModel } from '@/lib/mongodb';
 
 const EMAIL_SECRET = process.env.EMAIL_SECRET || 'your-secret-key';
 const JWT_SECRET = process.env.JWT_SECRET || 'your-jwt-secret';
+const EXTERNAL_APP_URL = 'https://app.liveplus.pro'; // Define the external domain
 
 export async function GET(request) {
   try {
@@ -13,7 +14,7 @@ export async function GET(request) {
     let token = searchParams.get('token');
     let tenant = searchParams.get('tenant');
     
-    // Get base URL for redirects
+    // Get base URL for error redirects only
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL;
     
     // Basic validation
@@ -49,8 +50,8 @@ export async function GET(request) {
       return NextResponse.redirect(new URL(`${baseUrl}/?error=invalid-tenant`));
     }
 
-    // Create tenant URL for redirects
-    const tenantUrl = `${baseUrl}/${encodeURIComponent(tenant)}`;
+    // Create tenant URL for the external domain
+    const tenantUrl = `${EXTERNAL_APP_URL}/${tenant}/financeiro`;
 
     // Connect to tenant's database
     let tenantConnection;
@@ -100,7 +101,7 @@ export async function GET(request) {
       token: token.substring(0, 10) + '...'
     });
     
-    // Create a session token
+    // Create a session token with the external domain information
     try {
       const secret = new TextEncoder().encode(JWT_SECRET);
       const sessionToken = await new SignJWT({ 
@@ -108,23 +109,28 @@ export async function GET(request) {
         userId: user._id.toString(),
         tenantPath: user.tenantPath,
         role: user.role,
-        authenticated: true 
+        authenticated: true,
+        externalDomain: EXTERNAL_APP_URL // Add external domain info to the token
       })
         .setProtectedHeader({ alg: 'HS256' })
         .setExpirationTime('7d')
         .sign(secret);
 
-      // Set the session cookie
+      // Set the session cookie with domain configuration for cross-domain
       const cookieStore = await cookies();
       await cookieStore.set('auth_token', sessionToken, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === 'production',
-        sameSite: 'lax',
+        secure: true, // Always use secure for external domains
+        sameSite: 'none', // Allow cross-domain cookies
         maxAge: 7 * 24 * 60 * 60, // 7 days
         path: '/',
+        domain: '.liveplus.pro' // Set the root domain for the cookie
       });
 
-      return NextResponse.redirect(new URL(`${tenantUrl}/dashboard`));
+      // Redirect to the external domain with the tenant path
+      const redirectUrl = `${tenantUrl}`;
+      console.log('Redirecting to:', redirectUrl);
+      return NextResponse.redirect(new URL(redirectUrl));
     } catch (error) {
       console.error('Session creation failed:', error);
       return NextResponse.redirect(new URL(`${tenantUrl}/?error=session-error`));
