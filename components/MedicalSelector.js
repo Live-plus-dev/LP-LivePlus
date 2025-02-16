@@ -20,9 +20,9 @@ const DashboardMedico = () => {
       icon: FileText,
       subtitle: 'Acesso seguro aos registros de saúde dos pacientes',
       features: [
-        'Histórico completo do paciente ao seu alcance',
-        'Gerenciamento digital de prescrições',
-        'Integração com resultados de exames e imagens'
+        'Histórico completo e atualizado do paciente, acessível a qualquer momento.',
+        'Gestão digital eficiente e sem papel.',
+        'Acesso rápido e intuitivo, facilitando o atendimento.'
       ]
     },
     {
@@ -30,9 +30,9 @@ const DashboardMedico = () => {
       icon: DollarSign,
       subtitle: 'Simplifique as finanças da sua clínica',
       features: [
-        'Faturamento e emissão automática de notas',
-        'Processamento de reembolsos de convênios',
-        'Relatórios e análises financeiras'
+        'Controle de contas a receber',
+        'Gerenciamento de contas a pagar',
+        'Análise financeira simplificada e intuitiva'
       ]
     },
     {
@@ -41,8 +41,8 @@ const DashboardMedico = () => {
       subtitle: 'Conecte-se com pacientes remotamente',
       features: [
         'Consultas em vídeo em alta definição',
-        'Sistema seguro de mensagens',
-        'Prescrição digital integrada'
+        'Sistema de mensagens seguro e confiável',
+        'Acesso fácil e intuitivo'
       ]
     },
     {
