@@ -5,7 +5,6 @@ import SubscriptionHandler from './SubscriptionHandler';
 
 const StarterModal = ({ isOpen, onClose, planTitle }) => {
   const [employeeCount, setEmployeeCount] = useState(1);
-  const basePrice = 1.49;
 
   useEffect(() => {
     if (isOpen) {
