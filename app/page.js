@@ -83,7 +83,7 @@ const LifePlusLanding = () => {
                 "Gestão de Retornos",
                 "Gestão de Performance",
                 "Gestão de Estoques",
-                "Integração com WhatsApp"
+                "Integração com Email"
               ]}
               buttonText="Lançamento em breve"
               isDisabled={true}
