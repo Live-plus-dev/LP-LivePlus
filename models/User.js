@@ -89,10 +89,4 @@ export const UserSchema = new mongoose.Schema({
 // Add compound index for tenantPath
 UserSchema.index({ tenantPath: 1 });
 
-// Function to get or create the User model for a specific connection
-export function getUserModel(connection) {
-  // Check if the model is already registered to avoid recompilation
-  return connection.models.User || connection.model('User', UserSchema);
-}
-
-// Don't create the model here - it will be created per tenant
+// Export the schema instead of the model 

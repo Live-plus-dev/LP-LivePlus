@@ -50,7 +50,7 @@ const ComparisonTable = () => {
       pro: true
     },
     {
-      name: "Integração com WhatsApp",
+      name: "Integração com Email",
       starter: false,
       plus: true,
       pro: true

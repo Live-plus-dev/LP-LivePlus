@@ -100,7 +100,7 @@ export const PricingCard = ({
         );
       case 'Plus':
         return (
-          <a href="https://calendly.com/marcos-prismma/30min" className="block w-full">
+          <a href="https://calendly.com/contato-liveplus" className="block w-full">
           <button 
             className={`w-full py-6 text-lg font-medium rounded-lg transition-colors duration-300 ${
               featured 
