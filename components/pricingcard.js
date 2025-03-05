@@ -100,6 +100,7 @@ export const PricingCard = ({
         );
       case 'Plus':
         return (
+          <a href="https://calendly.com/marcos-prismma/30min" className="block w-full">
           <button 
             className={`w-full py-6 text-lg font-medium rounded-lg transition-colors duration-300 ${
               featured 
@@ -107,12 +108,14 @@ export const PricingCard = ({
                 : 'bg-[#009ee3] text-white hover:bg-[#008cc7]'
             }`}
           >
+            
             Lançamento em breve
           </button>
+          </a>
         );
       case 'Pro':
         return (
-          <a href="https://calendly.com/marcos-prismma/30min" className="block w-full">
+          <a href="https://calendly.com/contato-liveplus" className="block w-full">
             <button 
               className={`w-full py-6 text-lg font-medium rounded-lg transition-colors duration-300 ${
                 featured 
@@ -168,7 +171,7 @@ export const PricingCard = ({
         <div className="mt-auto pt-8">
           {renderButton()}
           <a 
-            href="https://calendly.com/marcos-prismma/30min" 
+            href="https://calendly.com/contato-liveplus" 
             className="text-sm text-gray-600 hover:underline block mt-4"
           >
             ou fale com um especialista

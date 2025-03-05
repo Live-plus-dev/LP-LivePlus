@@ -162,12 +162,14 @@ const Hero = () => {
             <p className="text-xl text-gray-600 mb-8">
             A solução completa de gestão  para Clínicas, Hospitais e Profissionais da Saúde independentes, tudo em um único lugar.
             </p>
+            <a href="#Planos">
             <button 
-              onClick={() => setIsModalOpen(true)}
               className="bg-[#009ee3] text-white py-3 px-8 rounded-lg text-lg hover:bg-[#008cc7] transition-colors duration-300"
             >
               Experimente Agora
             </button>
+            </a>
+            
           </div>
           
           {/* Video Section with 3D Effect */}
