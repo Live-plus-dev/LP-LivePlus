@@ -66,9 +66,9 @@ const Hero = () => {
 
             {/* Auth Buttons */}
             <div className="hidden md:flex items-center ml-auto">
-              <a href="#Planos"> 
+              <a href="https://app.liveplus.pro/login"> 
               <button className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors">
-                Cadastre-se
+                Login
               </button> 
               </a>
             </div> 
@@ -119,10 +119,10 @@ const Hero = () => {
                   Contato
                 </Link>
 
-                <a href="#Planos">
+                <a href="https://app.liveplus.pro/login">
                 <button
                   className="bg-[#009ee3] text-white px-6 py-2 rounded-full hover:bg-sky-600 transition-colors text-center">
-                  Cadastre-se
+                  Login
                 </button>
                 </a>
               </div>
