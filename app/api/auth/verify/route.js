@@ -67,17 +67,22 @@ export async function GET(request) {
     // Find or create user
     let user;
     try {
+      // Check if this is the first user in the tenant
+      const userCount = await User.countDocuments();
+      const isFirstUser = userCount === 0;
+      
+      // Find user by email
       user = await User.findOne({ email: decoded.email });
       
       if (user && !user.tenantPath) {
         user.tenantPath = tenant;
         await user.save();
       } else if (!user) {
-        // Create new user
+        // Create new user - set role as 'owner' if this is the first user
         user = new User({
           email: decoded.email,
           tenantPath: tenant,
-          role: 'owner',
+          role: isFirstUser ? 'owner' : 'user', // Explicitly set role based on first user check
           createdAt: new Date(),
           lastLoginAt: new Date()
         });
