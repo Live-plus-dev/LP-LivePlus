@@ -77,7 +77,7 @@ export async function GET(request) {
         user = new User({
           email: decoded.email,
           tenantPath: tenant,
-          role: 'user',
+          role: 'owner',
           createdAt: new Date(),
           lastLoginAt: new Date()
         });
