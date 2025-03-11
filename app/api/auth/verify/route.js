@@ -67,22 +67,19 @@ export async function GET(request) {
     // Find or create user
     let user;
     try {
-      // Check if this is the first user in the tenant
-      const userCount = await User.countDocuments();
-      const isFirstUser = userCount === 0;
-      
-      // Find user by email
+      // Agora o middleware pre-save do schema lidará com a definição de role
       user = await User.findOne({ email: decoded.email });
       
       if (user && !user.tenantPath) {
         user.tenantPath = tenant;
         await user.save();
       } else if (!user) {
-        // Create new user - set role as 'owner' if this is the first user
+        // Create new user - não precisamos definir explicitamente o papel aqui
+        // O middleware pre-save irá verificar e atribuir 'owner' se for o primeiro usuário
         user = new User({
           email: decoded.email,
           tenantPath: tenant,
-          role: isFirstUser ? 'owner' : 'user', // Explicitly set role based on first user check
+          // O campo role usará o padrão ou será modificado pelo middleware
           createdAt: new Date(),
           lastLoginAt: new Date()
         });
