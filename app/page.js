@@ -74,7 +74,7 @@ const LifePlusLanding = () => {
             <PricingCard
               title="Plus"
               subtitle="Perfeito para hospitais e clinicas maiores"
-              price="R$249,00/mês"
+              price="R$109,00/mês"
               period="por profissional de saúde"
               features={[
                 "Tudo do Starter, mais:",
@@ -91,7 +91,7 @@ const LifePlusLanding = () => {
             <PricingCard
               title="Starter"
               subtitle="Perfeito para clinicas e medicos solos"
-              price="R$149,00/mês"
+              price="R$59,00/mês"
               period="por profissional de saude"
               features={[
                 "Contas a Receber",

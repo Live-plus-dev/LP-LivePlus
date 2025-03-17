@@ -77,7 +77,7 @@ const SubscriptionHandler = ({ plan, onSuccess, onError }) => {
       case 'starter':
         return {
           name: 'Starter',
-          pricePerUser: 14900, // R$149.00
+          pricePerUser: 5900, // R$149.00
           features: [
             'Contas a Receber',
             'Contas a Pagar',
@@ -90,7 +90,7 @@ const SubscriptionHandler = ({ plan, onSuccess, onError }) => {
       case 'plus':
         return {
           name: 'Plus',
-          pricePerUser: 24900, // R$199.00
+          pricePerUser: 10900, // R$199.00
           features: [
             'Tudo do Starter',
             'Prontuário eletrônico',
