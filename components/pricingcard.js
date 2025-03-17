@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import SubscriptionHandler from './SubscriptionHandler';
 
-const StarterModal = ({ isOpen, onClose, planTitle }) => {
+const PlanModal = ({ isOpen, onClose, planTitle, planType }) => {
   const [employeeCount, setEmployeeCount] = useState(1);
 
   useEffect(() => {
@@ -48,13 +48,9 @@ const StarterModal = ({ isOpen, onClose, planTitle }) => {
           </div>
 
           <div className="space-y-6">
-            
-
-            
-
             <div className="flex gap-4">
               <SubscriptionHandler
-                plan="starter"
+                plan={planType}
                 employeeCount={employeeCount}
                 onSuccess={() => {
                   console.log('Subscription successful');
@@ -62,7 +58,6 @@ const StarterModal = ({ isOpen, onClose, planTitle }) => {
                 }}
                 onError={(error) => console.error('Subscription error:', error)}
               />
-             
             </div>
           </div>
         </div>
@@ -100,35 +95,46 @@ export const PricingCard = ({
         );
       case 'Plus':
         return (
-          <a href="https://calendly.com/contato-liveplus" className="block w-full">
           <button 
+            onClick={() => setIsModalOpen(true)}
             className={`w-full py-6 text-lg font-medium rounded-lg transition-colors duration-300 ${
               featured 
                 ? 'bg-white text-[#009ee3] hover:bg-gray-100 border-2 border-[#009ee3]' 
                 : 'bg-[#009ee3] text-white hover:bg-[#008cc7]'
             }`}
           >
-            
-            Lançamento em breve
+            Selecionar Plano
           </button>
-          </a>
         );
       case 'Pro':
         return (
-          <a href="https://calendly.com/contato-liveplus" className="block w-full">
-            <button 
-              className={`w-full py-6 text-lg font-medium rounded-lg transition-colors duration-300 ${
-                featured 
-                  ? 'bg-white text-[#009ee3] hover:bg-gray-100 border-2 border-[#009ee3]' 
-                  : 'bg-[#009ee3] text-white hover:bg-[#008cc7]'
-              }`}
-            >
-              {buttonText}
-            </button>
-          </a>
+          <button 
+            onClick={() => setIsModalOpen(true)}
+            className={`w-full py-6 text-lg font-medium rounded-lg transition-colors duration-300 ${
+              featured 
+                ? 'bg-white text-[#009ee3] hover:bg-gray-100 border-2 border-[#009ee3]' 
+                : 'bg-[#009ee3] text-white hover:bg-[#008cc7]'
+            }`}
+          >
+            {buttonText || 'Selecionar Plano'}
+          </button>
         );
       default:
         return null;
+    }
+  };
+
+  // Determine the plan type based on the title
+  const getPlanType = () => {
+    switch(title) {
+      case 'Starter':
+        return 'starter';
+      case 'Plus':
+        return 'plus';
+      case 'Pro':
+        return 'pro';
+      default:
+        return '';
     }
   };
 
@@ -179,11 +185,12 @@ export const PricingCard = ({
         </div>
       </div>
       
-      {title === 'Starter' && (
-        <StarterModal
+      {(title === 'Starter' || title === 'Plus' || title === 'Pro') && (
+        <PlanModal
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           planTitle={title}
+          planType={getPlanType()}
         />
       )}
     </>

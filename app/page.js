@@ -85,8 +85,7 @@ const LifePlusLanding = () => {
                 "Gestão de Estoques",
                 "Integração com Email"
               ]}
-              buttonText="Lançamento em breve"
-              isDisabled={true}
+              buttonText="Selecionar Plano"
             />
 
             <PricingCard
@@ -117,9 +116,7 @@ const LifePlusLanding = () => {
                 "Tudo do Plus, mais:",
                 "Gestão de Requisições de Funcionalidades"
               ]}
-              buttonText="Agendar Demonstração"
-              isCustom={true}
-              customLink="https://calendly.com/contato-liveplus"
+              buttonText="Selecionar Plano"
             />
           </div>
         </div>
