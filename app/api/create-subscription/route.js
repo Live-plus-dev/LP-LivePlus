@@ -26,6 +26,13 @@ export async function POST(req) {
       },
     });
 
+    // Encode subscription details for the success URL
+    const subscriptionDetails = encodeURIComponent(JSON.stringify({
+      planType,
+      quantity,
+      pricePerUser
+    }));
+
     // Create the checkout session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -36,7 +43,7 @@ export async function POST(req) {
         },
       ],
       mode: 'subscription',
-      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/login`,
+      success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/login?subscription=${subscriptionDetails}`,
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/canceled`,
       subscription_data: {
         metadata: {

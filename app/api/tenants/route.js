@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
 import { verifyDatabase } from '@/lib/verifyDatabase';
+import { connectDB } from '@/lib/mongodb';
 
 export async function POST(request) {
   try {
-    const { tenant } = await request.json();
-    console.log(tenant);
+    const { tenant, subscription } = await request.json();
     
     if (!tenant) {
       return NextResponse.json(
@@ -13,16 +13,35 @@ export async function POST(request) {
       );
     }
 
+    if (!subscription) {
+      return NextResponse.json(
+        { error: 'Subscription details are required' },
+        { status: 400 }
+      );
+    }
+
     // This will now create the database if it doesn't exist
     const dbExists = await verifyDatabase(tenant);
 
-    // Return different response based on whether database was created or already existed
     if (dbExists) {
       return NextResponse.json(
         { error: 'Database already exists' },
         { status: 409 }
       );
     }
+
+    // Connect to the newly created tenant database
+    const connection = await connectDB(tenant);
+    const SubscriptionModel = connection.models.Subscription;
+
+    // Create the initial subscription record
+    await SubscriptionModel.create({
+      planType: subscription.planType,
+      userCount: subscription.quantity,
+      pricePerUser: subscription.pricePerUser,
+      stripeSubscriptionId: 'pending', // Will be updated when Stripe webhook confirms the subscription
+      currentPeriodEnd: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30 days from now
+    });
 
     return NextResponse.json({ 
       created: true,

@@ -1,6 +1,7 @@
 'use client'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Mail, Building } from "lucide-react";
+import { useSearchParams, useRouter } from 'next/navigation';
 
 export default function Home() {
   const [email, setEmail] = useState('');
@@ -9,6 +10,49 @@ export default function Home() {
   const [tenant, setTenant] = useState('');
   const [tenantError, setTenantError] = useState('');
   const [step, setStep] = useState(1); // 1 para input do tenant, 2 para email
+  const [subscriptionDetails, setSubscriptionDetails] = useState(null);
+  
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  useEffect(() => {
+    // Get subscription details from URL
+    const subscription = searchParams.get('subscription');
+    if (!subscription) {
+      // If no subscription details, redirect to pricing page
+      router.replace('/');
+      return;
+    }
+
+    try {
+      const decodedSubscription = JSON.parse(decodeURIComponent(subscription));
+      
+      // Validate that all required subscription fields are present
+      if (!decodedSubscription.planType || 
+          !decodedSubscription.quantity || 
+          !decodedSubscription.pricePerUser) {
+        router.replace('/pricing');
+        return;
+      }
+      
+      setSubscriptionDetails(decodedSubscription);
+    } catch (error) {
+      console.error('Error parsing subscription details:', error);
+      router.replace('/pricing');
+    }
+  }, [searchParams, router]);
+
+  // If subscription details are being checked, show loading state
+  if (!subscriptionDetails) {
+    return (
+      <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 flex items-center justify-center p-4">
+        <div className="w-full max-w-md bg-white rounded-xl shadow-lg p-8 space-y-8 text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#009EE3] mx-auto"></div>
+          <p className="text-gray-600">Verificando detalhes da assinatura...</p>
+        </div>
+      </div>
+    );
+  }
 
   const validateTenant = (value) => {
     // Valida se o tenant contém apenas letras, números, hífens e underscores
@@ -22,7 +66,10 @@ export default function Home() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ tenant: tenantName }),
+      body: JSON.stringify({ 
+        tenant: tenantName,
+        subscription: subscriptionDetails 
+      }),
     });
 
     if (!response.ok) {
