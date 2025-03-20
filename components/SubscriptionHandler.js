@@ -77,7 +77,7 @@ const SubscriptionHandler = ({ plan, onSuccess, onError }) => {
       case 'starter':
         return {
           name: 'Starter',
-          pricePerUser: 1, // R$0.01 for testing
+          pricePerUser: 5900, // R$0.01 for testing
           features: [
             'Contas a Receber',
             'Contas a Pagar',
@@ -90,7 +90,7 @@ const SubscriptionHandler = ({ plan, onSuccess, onError }) => {
       case 'plus':
         return {
           name: 'Plus',
-          pricePerUser: 1, // R$0.01 for testing
+          pricePerUser: 10900, // R$0.01 for testing
           features: [
             'Tudo do Starter',
             'Prontuário eletrônico',
